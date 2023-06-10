@@ -87,3 +87,29 @@ variable "nomSG" {
     description = "Declaracion nombre SG"
     default = "obli-SG"
 }
+# Declaracion variables target group
+variable "nomTG" {
+    type = string
+    description = "Declaracion nombre TG"
+    default = "obli-TG"
+}
+variable "targType" {
+    type = string
+    description = "Declaracion target type"
+    default = "instance"
+}
+variable "protocolo" {
+    type = string
+    description = "Declaracion protocolo"
+    default = "HTTP"
+}
+variable "nombLB" {
+    type = string
+    description = "Declaracion nombre lb"
+    default = "obli-lb"
+}
+variable "tipoLB" {
+    type = string
+    description = "Declaracion tipo lb"
+    default = "application"
+}

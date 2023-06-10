@@ -19,3 +19,10 @@ nomGW = "obli-GW"
 nomRT = "obli-RT"
 # Variables Security Group
 nomSG = "obli-SG"
+# Variables Target Group
+nomTG = "obli-TG" 
+targType = "instance"
+protocolo = "HTTP"
+nombLB = "nombLB"
+tipoLB = "application"
+
