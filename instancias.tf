@@ -26,3 +26,8 @@ resource "aws_instance" "obli-instance" {
         ]
     }
 }
+
+resource "aws_ami_from_instance" "obli-imgAutoScaling" {
+  name               = "img-autoscaling"
+  source_instance_id = aws_instance.obli-instance.id
+}
