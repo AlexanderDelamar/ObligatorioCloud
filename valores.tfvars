@@ -25,4 +25,3 @@ targType  = "instance"
 protocolo = "HTTP"
 nombLB    = "nombLB"
 tipoLB    = "application"
-
