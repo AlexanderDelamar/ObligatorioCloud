@@ -1,0 +1,89 @@
+version: '1.0'
+services:
+
+  web:
+    build: ./obligatorio-online-boutique
+    ports:
+      - "8080:80"
+
+  frontend:
+    image: "454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio"
+    ports:
+      - "8080:80"
+    depends_on:
+      - loadgenerator
+
+  loadgenerator:
+    image: "454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio"
+    ports:
+      - "80:80"
+
+  cart-service:
+    image: "454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio"
+    ports:
+      - "7070:80"
+    depends_on:
+      - frontend
+
+  checkoutservice:
+    image: "454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio"
+    ports:
+      - "5050:80"
+    depends_on:
+      - frontend
+
+  currencyservice:
+    image: "454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio"
+    ports:
+      - "7000:80"
+    depends_on:
+      - frontend, checkoutservice
+
+  emailservice:
+    image: "454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio"
+    ports:
+      - "8080:80"
+    depends_on:
+      - checkoutservice
+
+  recomendationservice:
+    image: "454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio"
+    ports:
+      - "8080:80"
+    depends_on:
+      - frontend
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:80"
+    depends_on:
+      - cart-service
+  
+  ad-service:
+    image: "454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio"
+    ports:
+      - "9555:80"
+    depends_on:
+      - frontend
+  
+  productcatalogservice:
+    image: "454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio"
+    ports:  
+      - "3550:80"
+    depends_on:
+      - frontend, chekoutservice
+
+  paymentservice:
+    image: "454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio"
+    ports:
+      - "50051:80"
+    depends_on:
+      - checkoutservice
+
+  shippingservice:
+    image: "454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio"
+    ports:
+      - "50051:80"
+    depends_on:
+      - frontend, checkoutservice

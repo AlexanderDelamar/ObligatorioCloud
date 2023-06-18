@@ -1,27 +1,20 @@
-# Variables provider
-region = "us-east-1"
-perfil = "default"
-# Variables Instancias
-tipoAMI       = "ami-04a0ae173da5807d3"
-tipoInstancia = "t2.micro"
-nomKey        = "vockey"
-nomInstancia  = ""
-# Variables Network
-nomVPC         = "obliVPC"
-cidrVPC        = "172.16.0.0/16"
-privateSubnet1 = "172.16.1.0/24"
-privateSubnet2 = "172.16.2.0/24"
-AZ1            = "us-east-1a"
-AZ2            = "us-east-1b"
-nomSubnet1     = "obli-private-subnet1"
-nomSubnet2     = "obli-private-subnet2"
-nomGW          = "obli-GW"
-nomRT          = "obli-RT"
-# Variables Security Group
-nomSG = "obli-SG"
-# Variables Target Group
-nomTG     = "obli-TG"
-targType  = "instance"
-protocolo = "HTTP"
-nombLB    = "nombLB"
-tipoLB    = "application"
+# Variables de cluster
+eksName       = "Obli-Cluster"
+rolARN        = "arn:aws:iam::454758626479:role/LabRole"
+nodegroupName = "Obli-Node"
+nodeRolARN    = "arn:aws:iam::454758626479:role/LabRole"
+tipoAMI       = "AL2_x86_64"
+capacidadInst = "ON_DEMAND"
+tipoInst      = "t3.medium"
+capInst       = 2
+tamMax        = 2
+tamMin        = 2
+maxIna        = 1
+# Variables de VPC
+bloqueVPC = "192.168.0.0/16"
+bloqueSubnet1 = "192.168.1.0/24"
+AZ1 = "us-east-1a"
+nombreSubnet1 = "obli-subnet1"
+bloqueSubnet2 = "192.168.2.0/24"
+AZ2 = "us-east-1b"
+nombreSubnet2 = "obli-subnet2"
