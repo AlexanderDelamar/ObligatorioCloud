@@ -32,3 +32,6 @@ nombGWBastion         = "Gateway Bastion"
 nombRTBastion = "Tabla rutas Bastion"
 
 nombSGBastion = "Security Group Bastion"
+
+regionProvider = "us-east-1"
+perfil = "default"

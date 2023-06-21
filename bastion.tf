@@ -10,19 +10,35 @@ resource "aws_instance" "obli-InstanceBastion" {
     Name      = var.nombInstBastion
     terraform = true
   }
+}
 
+resource "null_resource" "name"{
+  
   connection {
     type        = "ssh"
     user        = "ec2-user"
-    host        = self.public_ip
+    host        = aws_instance.obli-InstanceBastion.public_ip
     private_key = file("labsuser.pem")
+  }
+
+  provisioner "file" {
+    source = "build-docker-images.sh"
+    destination = "/home/ec2-user/build-docker-images.sh"
+  }
+
+  provisioner "file" {
+    source = "~/src/~"
+    destination = "/home/ec2-user/src/"
   }
 
   provisioner "remote-exec" {
     inline = [
       "sudo yum install -y git",
-      "sudo yum install -y docker"
-      
+      "sudo yum install -y docker",
+      "sudo chmod +x /home/ec2-user/build-docker-images.sh"
+      # "sh /home/ec2-user/build-docker-images.sh"
     ]
   }
+
+  depends_on = [aws_instance.obli-InstanceBastion]
 }
