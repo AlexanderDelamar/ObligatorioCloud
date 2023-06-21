@@ -1,3 +1,13 @@
+variable "regionProvider"{
+  type = string
+  description = "Declaracion de region provider"
+  default = "us-east-1"
+}
+variable "perfil"{
+  type = string
+  description = "Declaracion de perfil provider"
+  default = "default"
+}
 variable "eksName" {
   type        = string
   description = "Declaracion nombre del cluster"
