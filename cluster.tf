@@ -43,3 +43,7 @@ resource "aws_eks_node_group" "obli-EKSNode" {
     max_unavailable = var.maxIna
   }
 }
+
+resource "kubernetes_manifest" "example" {
+  manifest = file("/home/admin/nuevo/ObligatorioCloud/src/productcatalogservice/deployment/kubernetes-manifests.yaml")
+}

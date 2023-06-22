@@ -15,7 +15,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: obligatorio:latest
+          image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:checkoutservice
           ports:
           - containerPort: 5050
           readinessProbe:

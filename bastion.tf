@@ -12,7 +12,7 @@ resource "aws_instance" "obli-InstanceBastion" {
   }
 }
 
-resource "null_resource" "name"{
+resource "null_resource" "imagenes"{
   
   connection {
     type        = "ssh"
@@ -27,16 +27,16 @@ resource "null_resource" "name"{
   }
 
   provisioner "file" {
-    source = "~/src/~"
-    destination = "/home/ec2-user/src/"
+    source = "/home/admin/nuevo/ObligatorioCloud/src/adservice/"
+    destination = "/home/ec2-user/src"
   }
 
   provisioner "remote-exec" {
     inline = [
       "sudo yum install -y git",
       "sudo yum install -y docker",
-      "sudo chmod +x /home/ec2-user/build-docker-images.sh"
-      # "sh /home/ec2-user/build-docker-images.sh"
+      "sudo chmod +x /home/ec2-user/build-docker-images.sh",
+      "sudo sh /home/ec2-user/build-docker-images.sh"
     ]
   }
 
