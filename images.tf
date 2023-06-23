@@ -6,3 +6,10 @@ resource "aws_ecr_repository" "obli-images" {
     scan_on_push = true
   }
 }
+
+resource "null_resource" "pushimagenes" {
+  provisioner "local-exec" {
+    command = "sh build-docker-images.sh"
+  }
+  depends_on = [aws_ecr_repository.obli-images]
+}
