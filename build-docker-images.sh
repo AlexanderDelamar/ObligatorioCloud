@@ -4,13 +4,19 @@
 path="./src/"
 
 # Declaro cuenta de AWS 
-useraws="454758626479"
+useraws="735742781438"
 # Declaro region de AWS
 region="us-east-1"
 # Declaro version de la imagen
 version="latest"
 # Nombre del repositorio de ECR
 repo="obligatorio"
+# Nombre del repositorio de ECR
+repo="obligatorio"
+# Nombre del cluster EKS
+cluster="Obli-Cluster"
+# Nombre archivo de yaml Kube
+archivo="deploykube/merge.yaml"
 
 # Lista que contiene los servicios a desplegar
 array=( adservice cartservice checkoutservice currencyservice emailservice frontend loadgenerator paymentservice productcatalogservice recommendationservice redis shippingservice )
@@ -30,3 +36,9 @@ for service in "${array[@]}"; do
     sudo docker tag $service:$version $useraws.dkr.ecr.$region.amazonaws.com/$repo:$service
     sudo docker push $useraws.dkr.ecr.$region.amazonaws.com/$repo:$service
 done
+#Logueo al cluster
+aws eks --region $region update-kubeconfig --name $cluster
+#Despliego los containers
+kubectl create -f $archivo
+#Listo los servicios
+kubectl get svc
