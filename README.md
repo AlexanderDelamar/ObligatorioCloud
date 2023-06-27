@@ -1,5 +1,20 @@
-# ObligatorioCloud
+# Obligatorio Cloud
 Repositorio con Obligatorio Implementación de Soluciones Cloud - Semestre 5 2023
+
+## Integrantes
+- Alexander Delamar (272946)
+- Matías Landoni (261816)
+
+## Objetivo del Obligatorio
+Configurar y desplegar la infraestructura necesaria para la implementacion de los servicios proporcionados.
+
+## Solucion
+Se despliega la siguiente infraestructura mediante terraform:
+
+* EKS (Cluster, Worker Group, PODs)
+* ECR (Repositorio, Imagenes)
+* VPC (Subnets, Gateway, RT)
+---
 
 <p align="center">
 <img src="src/frontend/static/icons/Hipster_HeroLogoCyan.svg" width="300" alt="Online Boutique" />
@@ -52,25 +67,25 @@ Find **Protocol Buffers Descriptions** at the [`./pb` directory](./pb).
 
 ## Requisitos host local
 
- * Kubernetes
+ - Kubernetes
   
- * Docker
+ - Docker
   
- * Terraform
+ - Terraform
   
- * AWS CLI configurado con credenciales de usuario
+ - AWS CLI configurado con credenciales de usuario
   
 ## Pasos de implementación
  
- * Clonar repositorio https://github.com/AlexanderDelamar/ObligatorioCloud.git
+ 1. Clonar repositorio https://github.com/AlexanderDelamar/ObligatorioCloud.git
 
- * Provisionar al archivo build-docker-images.sh con el account ID
+ 2. Provisionar al archivo build-docker-images.sh con el account ID
 
- * Ejecutar el siguiente comando para el despliegue
+ 3. Ejecutar el siguiente comando para el despliegue
 
    terraform apply -var-file=valores.tfvars
 
- * Una vez finalizado el despliegue, ejecutar el siguiente comando para obtener la direccion a la pagina
+ 4. Una vez finalizado el despliegue, ejecutar el siguiente comando para obtener la direccion a la pagina
 
    kubectl get svc
    
