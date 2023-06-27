@@ -14,8 +14,8 @@ Se despliega la siguiente infraestructura mediante terraform:
 * ECR (Repositorio, Imagenes)
 * VPC (Subnets, Gateway, RT)
 
-| ----------------------------------------------------------------------------------------| 
-| [![Diagrama](./docs/img/diagramacloud.drawio.png)](./docs/img/diagramacloud.drawio.png) |
+
+[![Diagrama](./docs/img/diagramacloud.drawio.png)](./docs/img/diagramacloud.drawio.png)
 
 
 ---
