@@ -2,12 +2,14 @@ data "aws_iam_role" "labrole_arn" {
   name = "LabRole"
 }
 
+# Creacion de Cluster EKS
 resource "aws_eks_cluster" "obli-EKS" {
   name     = var.eksName
   role_arn = data.aws_iam_role.labrole_arn.arn
 
   vpc_config {
     subnet_ids = [aws_subnet.obli-ClusterSubnet1.id, aws_subnet.obli-ClusterSubnet2.id]
+    security_group_ids = [aws_security_group.obli-eks-sg.id]
   }
 
 }
@@ -20,6 +22,7 @@ output "kubeconfig-certificate-authority-data" {
   value = aws_eks_cluster.obli-EKS.certificate_authority[0].data
 }
 
+# Creacion de los nodos
 resource "aws_eks_node_group" "obli-EKSNode" {
   cluster_name    = aws_eks_cluster.obli-EKS.name
   node_group_name = var.nodegroupName
@@ -33,6 +36,7 @@ resource "aws_eks_node_group" "obli-EKSNode" {
     ec2_ssh_key = "vockey"
   }
 
+# Auto scaling de los nodos, cambiar en variables para aumentar o disminuir instancias en ejecucion
   scaling_config {
     desired_size = var.capInst
     max_size     = var.tamMax
@@ -42,8 +46,4 @@ resource "aws_eks_node_group" "obli-EKSNode" {
   update_config {
     max_unavailable = var.maxIna
   }
-}
-
-resource "kubernetes_manifest" "example" {
-  manifest = file("/home/admin/nuevo/ObligatorioCloud/src/productcatalogservice/deployment/kubernetes-manifests.yaml")
 }

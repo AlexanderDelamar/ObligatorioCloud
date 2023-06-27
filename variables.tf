@@ -1,12 +1,12 @@
-variable "regionProvider"{
-  type = string
+variable "regionProvider" {
+  type        = string
   description = "Declaracion de region provider"
-  default = "us-east-1"
+  default     = "us-east-1"
 }
-variable "perfil"{
-  type = string
+variable "perfil" {
+  type        = string
   description = "Declaracion de perfil provider"
-  default = "default"
+  default     = "default"
 }
 variable "eksName" {
   type        = string
@@ -87,4 +87,8 @@ variable "nombreSubnet2" {
   type        = string
   description = "Declaracion nombre Subnet2"
   default     = "obli-subnet2"
+}
+variable "nomSG" {
+  type = string
+  description = "Grupo de seguridad EKS"
 }
