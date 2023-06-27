@@ -1,6 +1,5 @@
-# Obligatorio Cloud
-Repositorio con Obligatorio Implementación de Soluciones Cloud - Semestre 5 2023
-
+# Obligatorio Implementación de Soluciones Cloud 2023
+---
 ## Integrantes
 - Alexander Delamar (272946)
 - Matías Landoni (261816)
