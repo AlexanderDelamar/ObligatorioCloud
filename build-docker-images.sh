@@ -33,7 +33,8 @@ for service in "${array[@]}"; do
     sudo docker tag $service:$version $useraws.dkr.ecr.$region.amazonaws.com/$repo:$service
     sudo docker push $useraws.dkr.ecr.$region.amazonaws.com/$repo:$service
 done
-
+#Agrego el accountID al archivo de deployment de kubernetes
+sed -i s/imagenr/$useraws/ $archivo
 #Logueo al cluster
 aws eks --region $region update-kubeconfig --name $cluster
 #Despliego los containers
