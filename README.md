@@ -7,7 +7,7 @@
 ## Objetivo del Obligatorio
 Configurar y desplegar la infraestructura necesaria para la implementacion de los servicios proporcionados.
 
-## Solucion
+## Solución
 Se despliega la siguiente infraestructura mediante terraform:
 
 * EKS (Cluster, Worker Group, Contenedores)
