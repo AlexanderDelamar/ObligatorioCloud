@@ -4,7 +4,7 @@
 path="./src/"
 
 # Declaro cuenta de AWS 
-useraws="735742781438"
+useraws=""
 # Declaro region de AWS
 region="us-east-1"
 # Declaro version de la imagen
