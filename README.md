@@ -85,11 +85,23 @@ Find **Protocol Buffers Descriptions** at the [`./pb` directory](./pb).
 
  2. Provisionar al archivo build-docker-images.sh con el account ID
 
- 3. Ejecutar el siguiente comando para el despliegue
+ 3. Ejecutar los siguientes comandos para el despliegue:
 
-  * terraform apply -var-file=valores.tfvars
+  * "terraform init" -> Inicializamos el directorio de trabajo.
+  * "terraform apply -var-file=valores.tfvars" -> Aplicamos la configuracion de la infraestructura a desplegar.
+
+ Una vez ejecutados los comandos obtendremos el siguiente resultado:
+
+  [![Diagrama](./docs/img/terraform-init-y-apply.gif)](./docs/img/terraform-init-y-apply.gif)
+
+
+  [![Diagrama](./docs/img/ejemplos.gif)](./docs/img/ejemplos.gif)
 
  4. Una vez finalizado el despliegue, ejecutar el siguiente comando para obtener la direccion a la pagina
 
   * kubectl get svc
+
+ A continuacion mostramos el funcionamiento de la pagina web.
+
+ [![Diagrama](./docs/img/pagina.gif)](./docs/img/pagina.gif)
    

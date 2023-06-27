@@ -175,7 +175,7 @@ spec:
           value: "1"
         - name: DISABLE_TRACING
           value: "1"
-        image: imagenr.dkr.ecr.us-east-1.amazonaws.com/obligatorio:adservice
+        image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:adservice
         livenessProbe:
           exec:
             command:
@@ -220,7 +220,7 @@ spec:
       - env:
         - name: REDIS_ADDR
           value: redis-cart:6379
-        image: imagenr.dkr.ecr.us-east-1.amazonaws.com/obligatorio:cartservice
+        image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:cartservice
         livenessProbe:
           exec:
             command:
@@ -284,7 +284,7 @@ spec:
           value: "1"
         - name: DISABLE_PROFILER
           value: "1"
-        image: imagenr.dkr.ecr.us-east-1.amazonaws.com/obligatorio:checkoutservice
+        image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:checkoutservice
         livenessProbe:
           exec:
             command:
@@ -330,7 +330,7 @@ spec:
           value: "1"
         - name: DISABLE_DEBUGGER
           value: "1"
-        image: imagenr.dkr.ecr.us-east-1.amazonaws.com/obligatorio:currencyservice
+        image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:currencyservice
         livenessProbe:
           exec:
             command:
@@ -376,7 +376,7 @@ spec:
           value: "1"
         - name: DISABLE_PROFILER
           value: "1"
-        image: imagenr.dkr.ecr.us-east-1.amazonaws.com/obligatorio:emailservice
+        image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:emailservice
         livenessProbe:
           exec:
             command:
@@ -441,7 +441,7 @@ spec:
           value: "1"
         - name: DISABLE_PROFILER
           value: "1"
-        image: imagenr.dkr.ecr.us-east-1.amazonaws.com/obligatorio:frontend
+        image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:frontend
         livenessProbe:
           httpGet:
             httpHeaders:
@@ -492,7 +492,7 @@ spec:
           value: frontend:80
         - name: USERS
           value: "10"
-        image: imagenr.dkr.ecr.us-east-1.amazonaws.com/obligatorio:loadgenerator
+        image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:loadgenerator
         name: main
         resources:
           limits:
@@ -544,7 +544,7 @@ spec:
           value: "1"
         - name: DISABLE_DEBUGGER
           value: "1"
-        image: imagenr.dkr.ecr.us-east-1.amazonaws.com/obligatorio:paymentservice
+        image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:paymentservice
         livenessProbe:
           exec:
             command:
@@ -591,7 +591,7 @@ spec:
           value: "1"
         - name: DISABLE_PROFILER
           value: "1"
-        image: imagenr.dkr.ecr.us-east-1.amazonaws.com/obligatorio:productcatalogservice
+        image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:productcatalogservice
         livenessProbe:
           exec:
             command:
@@ -640,7 +640,7 @@ spec:
           value: "1"
         - name: DISABLE_DEBUGGER
           value: "1"
-        image: imagenr.dkr.ecr.us-east-1.amazonaws.com/obligatorio:recommendationservice
+        image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:recommendationservice
         livenessProbe:
           exec:
             command:
@@ -729,7 +729,7 @@ spec:
           value: "1"
         - name: DISABLE_PROFILER
           value: "1"
-        image: imagenr.dkr.ecr.us-east-1.amazonaws.com/obligatorio:shippingservice
+        image: 454758626479.dkr.ecr.us-east-1.amazonaws.com/obligatorio:shippingservice
         livenessProbe:
           exec:
             command:
