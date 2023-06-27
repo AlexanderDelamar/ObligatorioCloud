@@ -10,7 +10,7 @@ Configurar y desplegar la infraestructura necesaria para la implementacion de lo
 ## Solucion
 Se despliega la siguiente infraestructura mediante terraform:
 
-* EKS (Cluster, Worker Group, PODs)
+* EKS (Cluster, Worker Group, Contenedores)
 * ECR (Repositorio, Imagenes)
 * VPC (Subnets, Gateway, RT)
 ---
