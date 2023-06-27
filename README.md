@@ -13,6 +13,11 @@ Se despliega la siguiente infraestructura mediante terraform:
 * EKS (Cluster, Worker Group, Contenedores)
 * ECR (Repositorio, Imagenes)
 * VPC (Subnets, Gateway, RT)
+
+| ----------------------------------------------------------------------------------------------------------------- | 
+| [![Diagrama](./docs/img/diagramacloud.drawio.png)](./docs/img/diagramacloud.drawio.png) |
+
+
 ---
 
 <p align="center">
