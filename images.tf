@@ -12,4 +12,5 @@ resource "null_resource" "pushimagenes" {
     command = "sh build-docker-images.sh"
   }
   depends_on = [aws_ecr_repository.obli-images]
+  depends_on = [aws_eks_node_group.obli-EKSNode]
 }
