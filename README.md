@@ -50,7 +50,7 @@ Find **Protocol Buffers Descriptions** at the [`./pb` directory](./pb).
 
 ---
 
-##Requisitos host local
+## Requisitos host local
 
  * Kubernetes
   
@@ -60,7 +60,7 @@ Find **Protocol Buffers Descriptions** at the [`./pb` directory](./pb).
   
  * AWS CLI configurado con credenciales de usuario
   
-##Pasos de implementación
+## Pasos de implementación
  
  * Clonar repositorio https://github.com/AlexanderDelamar/ObligatorioCloud.git
 
