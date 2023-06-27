@@ -83,9 +83,9 @@ Find **Protocol Buffers Descriptions** at the [`./pb` directory](./pb).
 
  3. Ejecutar el siguiente comando para el despliegue
 
-   terraform apply -var-file=valores.tfvars
+  * terraform apply -var-file=valores.tfvars
 
  4. Una vez finalizado el despliegue, ejecutar el siguiente comando para obtener la direccion a la pagina
 
-   kubectl get svc
+  * kubectl get svc
    
